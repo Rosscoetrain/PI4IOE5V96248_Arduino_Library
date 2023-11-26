@@ -17,7 +17,8 @@ const byte PI4IOE5V96248_ADDRESS = 0x23;  // Example PI4IOE5V96248 I2C address, 
 
 void setup() {
   Serial.begin(115200);
-  Wire.begin(25, 23); //Join I2C bus, set SDA and SCL pins respectively (tested on ESP32, remove pins if using another chip)
+//  Wire.begin(25, 23);  //Join I2C bus, set SDA and SCL pins respectively (tested on ESP32, remove pins if using another chip)
+  Wire.begin();          //Join I2C bus
   Wire.setClock(400000); //Set speed to 400Khz, chip supports up to 1Mhz
 
   delay(100); //give system chance to stabilize, likely not needed.
@@ -61,3 +62,4 @@ void loop() {
   delay(3000);
   Serial.println (io_exp.readPin(0, 1), HEX); //read from port 0, pin 1, will return whatever the pins were set to
 }
+

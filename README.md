@@ -7,6 +7,11 @@ The library is really basic, mostly using the Wire library. It is made just to p
 The other quirk is that the chip seems to just return the already set pin values for read. This makes input from this chip not useful.
 Hence, assume this chip only does output :/
 
+
+The original library from Blueprint-Foundary doesn't read from the I2C address + 1 for the read function.  This library does read from I2C address + 1 so should read the ports correctly.
+As at 27 November 2023 not yet tested as waiting on hardware to arrive.
+
+
 ## Installation:
 Download the .zip file from Github, in Arduino go to Sketch -> Include Library -> Add .ZIP Library... and select the downloaded .zip file.  
 The library example can then be opened under File -> Examples -> PI4IOE5V96248 IO Expander  
